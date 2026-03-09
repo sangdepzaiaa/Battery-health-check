@@ -19,9 +19,11 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".ui.settings.SettingsActivity"
+            android:theme="@style/NoFadeTheme"
             android:exported="false" />
         <activity
             android:name=".ui.BatteryUsage.BatteryUsageActivity"
+            android:theme="@style/NoFadeTheme"
             android:exported="false" />
         <activity
             android:name=".ui.NoInternet.NoInternetActivity"
@@ -34,6 +36,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.HomeActivity"
+            android:theme="@style/NoFadeTheme"
             android:exported="false" />
         <activity
             android:name=".openning.SplashActivity"

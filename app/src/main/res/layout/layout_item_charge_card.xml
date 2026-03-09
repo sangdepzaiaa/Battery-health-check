@@ -20,37 +20,43 @@
             android:layout_height="match_parent"/>
 
         <!-- CONTENT -->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:padding="16dp">
 
             <ImageView
+                app:layout_constraintTop_toTopOf="@+id/clContent"
+                app:layout_constraintStart_toStartOf="@+id/clContent"
                 android:id="@+id/icon"
                 android:layout_width="34dp"
                 android:layout_height="34dp"
                 android:src="@drawable/ic_info"/>
 
             <TextView
+                app:layout_constraintBottom_toTopOf="@+id/value"
+                app:layout_constraintStart_toStartOf="parent"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:id="@+id/title"
                 android:text="Charge"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="12dp"/>
 
             <TextView
+                app:layout_constraintBottom_toBottomOf="@+id/clContent"
+                app:layout_constraintStart_toStartOf="@+id/clContent"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:id="@+id/value"
                 android:text="58%"
-                android:textSize="28sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
 

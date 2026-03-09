@@ -12,4 +12,12 @@
         <item name="android:windowMinWidthMinor">92%</item>
         <item name="android:backgroundDimAmount">0.5</item>
     </style>
+
+
+    <style name="NoFadeTheme" parent="Theme.Material3.DayNight.NoActionBar">  <!-- hoặc theme của mày -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <!-- Hoặc dùng @android:style/Animation.NoAnimation nếu muốn explicit -->
+        <item name="android:windowIsTranslucent">false</item>  <!-- tránh translucent fade -->
+        <item name="android:windowBackground">@android:color/white</item>  <!-- hoặc màu nền chính -->
+    </style>
 </resources>

@@ -23,13 +23,13 @@ class BatteryWaveView @JvmOverloads constructor(
 
     init {
 
-        wavePaint1.color = Color.parseColor("#4DB6AC")
+        wavePaint1.color = Color.parseColor("#3337C186")
         wavePaint1.style = Paint.Style.FILL
 
-        wavePaint2.color = Color.parseColor("#80CBC4")
+        wavePaint2.color = Color.parseColor("#3337C186")
         wavePaint2.style = Paint.Style.FILL
 
-        wavePaint3.color = Color.parseColor("#B2DFDB")
+        wavePaint3.color = Color.parseColor("#37C186")
         wavePaint3.style = Paint.Style.FILL
 
         startAnimation()

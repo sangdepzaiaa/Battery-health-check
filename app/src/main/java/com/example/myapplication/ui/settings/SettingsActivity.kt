@@ -30,11 +30,10 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding>(
                 navigateTo(HomeActivity::class.java)
             }
             clBatteryUsage.tap {
-                // đã ở đây rồi → có thể bỏ qua hoặc làm gì đó khác (ví dụ scroll to top)
-                // nhưng thường để trống hoặc chỉ highlight lại
+                navigateTo(BatteryUsageActivity::class.java)
             }
             clSettings.tap {
-                navigateTo(SettingsActivity::class.java)
+
             }
         }
     }

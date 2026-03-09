@@ -99,7 +99,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(
 
         binding.layoutBottomNavHome.run {
             clHome.tap {
-                navigateTo(HomeActivity::class.java)
+
             }
 
             clBatteryUsage.tap {

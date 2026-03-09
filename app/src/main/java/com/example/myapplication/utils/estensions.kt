@@ -1,9 +1,12 @@
 package com.example.myapplication.utils
 
 import android.app.Activity
+import android.app.Activity.OVERRIDE_TRANSITION_CLOSE
+import android.app.Activity.OVERRIDE_TRANSITION_OPEN
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
+import android.os.Build
 import android.view.View
 import com.example.myapplication.ui.NoInternet.NoInternetActivity
 
@@ -35,29 +38,21 @@ fun Context.findActivity(): Activity? {
 
 fun Activity.navigateTo(targetClass: Class<out Activity>) {
     val currentClass = this::class.java
+    if (currentClass == targetClass) return
 
-    // Prevent navigating to the same screen (avoids flicker & unnecessary work)
-    if (currentClass == targetClass) {
-        return
+    val intent = Intent(this, targetClass).apply {
+        addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)  // vẫn giữ để an toàn
     }
-
-    val intent = Intent(this, targetClass)
 
     startActivity(intent)
 
-    // Most popular & smooth animation for bottom navigation bar pattern
-    overridePendingTransition(
-        android.R.anim.slide_in_left,     // new screen slides in from right
-        android.R.anim.slide_out_right    // old screen slides out to left
-    )
+    // Skip animation – ưu tiên cách mới nếu API >= 34
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+        overrideActivityTransition(OVERRIDE_TRANSITION_OPEN, 0, 0)
+    } else {
+        @Suppress("DEPRECATION")
+        overridePendingTransition(0, 0)
+    }
 
     finish()
-
-    // Alternative smooth options (uncomment if you prefer):
-
-    // Fade transition - very clean & modern
-    // overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-
-    // No animation - fastest but can feel abrupt
-    // overridePendingTransition(0, 0)
 }
