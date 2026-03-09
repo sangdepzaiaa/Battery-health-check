@@ -56,7 +56,7 @@ abstract class BaseActivity<VB : ViewBinding>(val inflater: (LayoutInflater) -> 
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 
-    abstract fun initViewBase()
+    open fun initViewBase(){}
 
     open fun callBackPress() {
         finish()

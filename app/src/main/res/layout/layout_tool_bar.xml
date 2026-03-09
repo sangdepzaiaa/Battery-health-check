@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/txvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/color_37474F"
+        android:text="@string/battery_life_health"/>
+
+    <ImageView
+        android:id="@+id/imgInfo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="@+id/imgTranslate"
+        app:layout_constraintBottom_toBottomOf="@+id/imgTranslate"
+        app:layout_constraintEnd_toStartOf="@+id/imgTranslate"
+        android:src="@drawable/ic_info"
+       />
+
+    <ImageView
+        android:id="@+id/imgTranslate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_translate"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

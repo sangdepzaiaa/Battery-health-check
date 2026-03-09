@@ -7,6 +7,7 @@ import com.dino.rate.replaceActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.RemoteConfig
 import com.example.myapplication.ads.AdsManager
+import com.example.myapplication.ui.HomeActivity
 
 class IntroActivity : BaseIntroActivity() {
 
@@ -15,7 +16,7 @@ class IntroActivity : BaseIntroActivity() {
 
     override fun nextActivity() {
         AdsManager.loadAndShowInter(this, RemoteConfig.INTER_INTRO) {
-            replaceActivity<MainActivity>()
+            replaceActivity<HomeActivity>()
         }
     }
 }

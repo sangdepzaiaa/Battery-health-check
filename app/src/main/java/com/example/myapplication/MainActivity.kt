@@ -1,18 +1,12 @@
 package com.example.myapplication
 
-import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.dino.ads.admob.AdmobUtils
 import com.dino.rate.addActivity
-import com.dino.rate.replaceActivity
 import com.example.myapplication.ads.AdsManager
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivityMainBinding
-import com.example.myapplication.ui.TestActivity
+import com.example.myapplication.ui.HomeActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     inflater = ActivityMainBinding::inflate
@@ -20,7 +14,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun initViewBase() {
         binding.btnAdsInter.setOnClickListener {
             AdsManager.loadAndShowInter(this, RemoteConfig.INTER_HOME) {
-                addActivity<TestActivity>()
+                addActivity<HomeActivity>()
             }
         }
 

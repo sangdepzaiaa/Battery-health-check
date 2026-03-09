@@ -5,6 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.TestActivity">
+    tools:context=".ui.HealthActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="ffffffffffffffffffffff"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

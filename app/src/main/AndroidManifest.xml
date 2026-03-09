@@ -18,7 +18,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".ui.TestActivity"
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.BatteryUsage.BatteryUsageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.NoInternet.NoInternetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.HealthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".openning.SplashActivity"
@@ -37,7 +52,7 @@
             android:exported="true" />
         <activity
             android:name=".openning.IntroActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
