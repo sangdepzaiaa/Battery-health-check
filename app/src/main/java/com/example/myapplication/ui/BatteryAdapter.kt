@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 
 class BatteryAdapter(
-    private val list: List<BatteryItem>
+    private val list: MutableList<BatteryItem>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemViewType(position: Int) = list[position].type
@@ -55,7 +55,7 @@ class BatteryAdapter(
 
             holder.wave.setProgress(percent)
 
-            holder.wave.startAnimation()
+           //holder.wave.startAnimation()
 
         }
     }
@@ -76,6 +76,14 @@ class BatteryAdapter(
     fun updateCharge(percent:Int){
 
         list.find { it.title=="Charge" }?.value = "$percent%"
+
+        notifyDataSetChanged()
+    }
+
+    fun updateData(newList: List<BatteryItem>) {
+
+        list.clear()
+        list.addAll(newList)
 
         notifyDataSetChanged()
     }

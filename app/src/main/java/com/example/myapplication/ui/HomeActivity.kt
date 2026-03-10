@@ -2,117 +2,78 @@ package com.example.myapplication.ui
 
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.BatteryManager
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.dino.ads.admob.AdmobUtils
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivityHomeBinding
-import com.example.myapplication.ui.BatteryUsage.BatteryUsageActivity
-import com.example.myapplication.ui.settings.SettingsActivity
-import com.example.myapplication.utils.navigateTo
-import com.example.myapplication.utils.tap
+import com.example.myapplication.ui.BatteryUsage.BatteryUsageFragment
+import com.example.myapplication.ui.home.HomeFragment
+import com.example.myapplication.ui.settings.SettingsFragment
 import com.google.android.material.tabs.TabLayout
-import kotlin.jvm.java
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>(
     inflater = ActivityHomeBinding::inflate
 ) {
-    private var adapter: BatteryAdapter? =null
+
+    private val homeFragment = HomeFragment()
+    private val batteryFragment = BatteryUsageFragment()
+    private val settingsFragment = SettingsFragment()
+    private var activeFragment: Fragment = homeFragment
+
     override fun initViewBase() {
-        setUpTablayout()
-        setUpInfoBattery()
-        setUpNavigation()
+        setupNav()
     }
 
-    private fun setUpTablayout(){
-        binding.layoutTabLayout.tabLayout.addTab(
-            binding.layoutTabLayout.tabLayout.newTab().setText("Information")
-        )
-        binding.layoutTabLayout.tabLayout.addTab(
-            binding.layoutTabLayout.tabLayout.newTab().setText("Health")
-        )
 
-        binding.layoutTabLayout.tabLayout.addOnTabSelectedListener(object :
-            TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                if (tab?.position == 0) {
-                    binding.layoutTabInfo.rvBattery.visibility = View.VISIBLE
-                    binding.layoutTabHealth.layoutTabHealth.visibility = View.GONE
-                } else {
-                    binding.layoutTabInfo.rvBattery.visibility = View.GONE
-                    binding.layoutTabHealth.layoutTabHealth.visibility = View.VISIBLE
+    private fun setupNav() {
+        // Khởi tạo fragments lần đầu (chỉ add 1 lần)
+        if (supportFragmentManager.findFragmentByTag("home") == null) {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.fragment_container, homeFragment, "home")
+                add(R.id.fragment_container, batteryFragment, "battery").hide(batteryFragment)
+                add(R.id.fragment_container, settingsFragment, "settings").hide(settingsFragment)
+            }.commit()
+        }
+
+        activeFragment = homeFragment
+
+        binding.bottomNavigation.apply {
+            // Optional: nếu bạn muốn disable tint mặc định để selector icon hoạt động đúng (không bị override màu)
+            // itemIconTintList = null  // Uncomment nếu icon bị tint sai màu
+
+            // Hoặc dùng selector màu cho tint (nếu icon là monochrome)
+            // itemIconTintList = ColorStateList.valueOf(...) hoặc từ resource
+
+            setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.nav_home     -> switchTo(homeFragment)
+                    R.id.nav_battery  -> switchTo(batteryFragment)
+                    R.id.nav_settings -> switchTo(settingsFragment)
+                    else              -> false
                 }
+                true
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-        })
-    }
-
-    private fun setUpInfoBattery(){
-        val info = BatteryInfoUtil.getBatteryInfo(this)
-
-        val list = listOf(
-
-            BatteryItem("Voltage",info["voltage"]!!,R.drawable.ic_voltage,TYPE_SMALL),
-
-            BatteryItem("Health",info["health"]!!,R.drawable.ic_health,TYPE_SMALL),
-
-            BatteryItem("Charge",info["charge"]!!,R.drawable.ic_battery_change,TYPE_BIG),
-
-            BatteryItem("Temperature",info["temperature"]!!,R.drawable.ic_temperature,TYPE_SMALL),
-
-            BatteryItem("Plugged",info["plugged"]!!,R.drawable.ic_plugged,TYPE_SMALL),
-
-            BatteryItem("Technology",info["technology"]!!,R.drawable.ic_technology,TYPE_SMALL),
-
-            BatteryItem("Status",info["status"]!!,R.drawable.ic_status,TYPE_SMALL)
-        )
-
-        binding.layoutTabInfo.rvBattery.layoutManager =
-            StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-
-        binding.layoutTabInfo.rvBattery.adapter = BatteryAdapter(list)
-
-
-        val receiver = BatteryReceiver {
-
-            adapter?.updateCharge(it)
-
-        }
-
-        registerReceiver(
-            receiver,
-            IntentFilter(Intent.ACTION_BATTERY_CHANGED)
-        )
-    }
-
-    private fun setUpNavigation() {
-
-        binding.layoutBottomNavHome.run {
-            clHome.tap {
-
-            }
-
-            clBatteryUsage.tap {
-                navigateTo(BatteryUsageActivity::class.java)
-            }
-
-            clSettings.tap {
-                navigateTo(SettingsActivity::class.java)
-            }
+            // Set tab mặc định là Home
+            selectedItemId = R.id.nav_home
         }
     }
 
+    private fun switchTo(fragment: Fragment) {
+        if (fragment == activeFragment) return
 
+        supportFragmentManager.beginTransaction().apply {
+            hide(activeFragment)
+            show(fragment)
+            commit()
+            // commitAllowingStateLoss() nếu app hay crash do state loss (background/rotation)
+        }
 
-
+        activeFragment = fragment
+    }
 }
