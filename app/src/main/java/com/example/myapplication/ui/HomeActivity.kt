@@ -1,17 +1,13 @@
 package com.example.myapplication.ui
 
-import android.content.Intent
-import android.content.IntentFilter
-import android.view.View
+
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.ui.BatteryUsage.BatteryUsageFragment
+
 import com.example.myapplication.ui.home.HomeFragment
 import com.example.myapplication.ui.settings.SettingsFragment
 import com.google.android.material.tabs.TabLayout
