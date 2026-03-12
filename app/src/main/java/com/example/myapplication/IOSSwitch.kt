@@ -6,12 +6,17 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import kotlin.math.min
 
 class IOSSwitch @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
 ) : View(context, attrs) {
+    
+    private var onCheckedChangeListener: ((Boolean) -> Unit)? = null
+
+    fun setOnCheckedChangeListener(l: (Boolean) -> Unit) {
+        onCheckedChangeListener = l
+    }
 
     private var isChecked = false
 
@@ -40,14 +45,12 @@ class IOSSwitch @JvmOverloads constructor(
         super.onDraw(canvas)
 
         val radius = height / 2f
-
         trackRect.set(0f, 0f, width.toFloat(), height.toFloat())
 
         paintTrack.color = if (isChecked) onColor else offColor
         canvas.drawRoundRect(trackRect, radius, radius, paintTrack)
 
         val thumbRadius = height * 0.42f
-
         val minX = radius
         val maxX = width - radius
 
@@ -58,39 +61,48 @@ class IOSSwitch @JvmOverloads constructor(
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (event.action == MotionEvent.ACTION_UP) {
-            toggle()
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> return true
+            MotionEvent.ACTION_UP -> {
+                toggle()
+                performClick() // Quan trọng để hỗ trợ OnClickListener và Accessibility
+                return true
+            }
         }
+        return super.onTouchEvent(event)
+    }
+
+    override fun performClick(): Boolean {
+        super.performClick()
         return true
     }
 
     private fun toggle() {
         isChecked = !isChecked
         animateThumb()
+        onCheckedChangeListener?.invoke(isChecked)
     }
 
     private fun animateThumb() {
-
         val start = thumbPosition
         val end = if (isChecked) 1f else 0f
 
         ValueAnimator.ofFloat(start, end).apply {
-
             duration = 180
-
             addUpdateListener {
                 thumbPosition = it.animatedValue as Float
                 invalidate()
             }
-
             start()
         }
     }
 
     fun setChecked(value: Boolean) {
-        isChecked = value
-        thumbPosition = if (value) 1f else 0f
-        invalidate()
+        if (isChecked != value) {
+            isChecked = value
+            thumbPosition = if (value) 1f else 0f
+            invalidate()
+        }
     }
 
     fun isChecked(): Boolean {

@@ -71,12 +71,12 @@ abstract class BaseDialog<VB : ViewBinding>(
         controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 
-    override fun show() {
-        super.show()
-        window?.setLayout(
-            WindowManager.LayoutParams.MATCH_PARENT,
-            WindowManager.LayoutParams.MATCH_PARENT
-        )
-    }
+//    override fun show() {
+//        super.show()
+//        window?.setLayout(
+//            WindowManager.LayoutParams.MATCH_PARENT,
+//            WindowManager.LayoutParams.MATCH_PARENT
+//        )
+//    }
 
 }

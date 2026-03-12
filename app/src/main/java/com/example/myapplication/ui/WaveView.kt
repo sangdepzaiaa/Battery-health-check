@@ -65,7 +65,7 @@ class BatteryWaveView @JvmOverloads constructor(
         if (animator?.isRunning == true) return
 
         animator = ValueAnimator.ofFloat(0f, 1f).apply {
-            duration = 8L
+            duration = 12L
             repeatCount = ValueAnimator.INFINITE
             interpolator = LinearInterpolator()
 

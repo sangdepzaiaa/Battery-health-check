@@ -20,4 +20,15 @@
         <item name="android:windowIsTranslucent">false</item>  <!-- tránh translucent fade -->
         <item name="android:windowBackground">@android:color/white</item>  <!-- hoặc màu nền chính -->
     </style>
+    
+    <style name="NumberPickerTheme" parent="Theme.AppCompat.Light">
+<!--        <item name="colorAccent">@android:color/white</item>-->
+        <item name="colorControlNormal">@android:color/transparent</item>
+<!--        <item name="android:textColorPrimary">@android:color/white</item>-->
+        <item name="android:background">@android:color/transparent</item>
+<!--        <item name="android:textSize">30sp</item>-->
+
+    </style>
+
+
 </resources>
