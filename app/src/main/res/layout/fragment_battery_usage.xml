@@ -17,6 +17,7 @@
     <include
         android:id="@+id/layout_tab_layout"
         layout="@layout/layout_tab_layout"
+        android:layout_marginHorizontal="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/layout_tool_bar"

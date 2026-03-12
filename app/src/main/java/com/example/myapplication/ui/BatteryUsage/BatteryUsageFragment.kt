@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.lifecycle.lifecycleScope
+import com.example.myapplication.R
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.data.AppUsageModel
 import com.example.myapplication.databinding.FragmentBatteryUsageBinding
@@ -27,6 +28,8 @@ class BatteryUsageFragment : BaseFragment<FragmentBatteryUsageBinding>(
 
     override fun initView() {
         super.initView()
+
+        binding.layoutToolBar.txvTitle.text = getString(R.string.battery_usage)
 
         setupRecyclerView()
         setupTabLayout()
