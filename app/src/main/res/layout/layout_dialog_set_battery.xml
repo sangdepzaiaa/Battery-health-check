@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_round_16"
+    android:layout_marginHorizontal="16dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgSetBattery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_set_battery"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/txvSetBattery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/set_battery_capacity_per_design"
+        app:layout_constraintTop_toBottomOf="@+id/imgSetBattery"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/font_inter_semi_bold"
+        android:textColor="@color/color_37C186"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_marginHorizontal="12dp"
+        android:id="@+id/txvEnter_battery"
+        android:fontFamily="@font/font_inter_medium"
+        android:textSize="14sp"
+        android:textColor="@color/color_37474F"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_battery_capacity"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/txvSetBattery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <FrameLayout
+        android:layout_marginHorizontal="12dp"
+        android:id="@+id/flSetEnterBattery"
+        app:layout_constraintTop_toBottomOf="@+id/txvEnter_battery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_input_round">
+
+        <EditText
+            android:id="@+id/edtCapacity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"
+            android:paddingEnd="60dp"
+            android:inputType="number"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:background="@android:color/transparent"
+            android:hint="0"/>
+
+        <TextView
+            android:id="@+id/txtUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mAh"
+            android:textSize="16sp"
+            android:textColor="#888"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="16dp"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_marginHorizontal="12dp"
+        android:id="@+id/txvYouCanFind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/flSetEnterBattery"
+        android:text="@string/you_can_find_this_value_based_on_the_type_of_phone_you_are_using"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/font_inter_regular"
+        android:textSize="14sp"
+        android:textColor="@color/color_37C186"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSetBattery"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/txvYouCanFind"
+        android:background="@drawable/bg_round_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        android:fontFamily="@font/font_roboto_semi_bold"
+        android:textSize="16sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

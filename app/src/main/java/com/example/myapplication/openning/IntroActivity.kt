@@ -7,7 +7,7 @@ import com.dino.rate.replaceActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.RemoteConfig
 import com.example.myapplication.ads.AdsManager
-import com.example.myapplication.ui.HomeActivity
+import com.example.myapplication.ui.home.HomeActivity
 
 class IntroActivity : BaseIntroActivity() {
 

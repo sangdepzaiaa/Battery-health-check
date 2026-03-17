@@ -12,7 +12,8 @@ abstract class BaseFragment<VB : ViewBinding>(
 ) : Fragment() {
 
     private var _binding: VB? = null
-    protected val binding get() = _binding!!
+    protected val binding get() = _binding ?: throw IllegalStateException("View binding not available")
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

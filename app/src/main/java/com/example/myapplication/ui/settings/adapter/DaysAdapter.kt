@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 
@@ -32,18 +33,26 @@ class DaysAdapter(
 
         val value = days[position]
 
-        holder.text.text = "$value days"
+        holder.text.text = "$value ${holder.itemView.context.getString(R.string.days)}"
+
+        // trạng thái radio
         holder.radio.isChecked = position == selectedPosition
 
+        // click toàn bộ item
         holder.itemView.setOnClickListener {
 
-            val old = selectedPosition
+            val oldPosition = selectedPosition
             selectedPosition = position
 
-            notifyItemChanged(old)
+            notifyItemChanged(oldPosition)
             notifyItemChanged(position)
 
             onSelected(value)
+        }
+
+        // click trực tiếp radio
+        holder.radio.setOnClickListener {
+            holder.itemView.performClick()
         }
     }
 }

@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/batteryFragment"
-        android:name="com.example.myapplication.ui.BatteryUsage.BatteryUsageFragment"
+        android:name="com.example.myapplication.ui.battery_sage.BatteryUsageFragment"
         android:label="Battery" />
 
     <fragment

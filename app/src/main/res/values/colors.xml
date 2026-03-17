@@ -9,6 +9,15 @@
     <color name="color_90A4AE">#90A4AE</color>
     <color name="color_607D8B">#607D8B</color>
     <color name="color_B0BEC5">#B0BEC5</color>
+    <color name="color_FBC02D">#FBC02D</color>
+    <color name="cc">#38B77B</color>
 
+    <color name="native_button_color">#37C186</color>
+    <color name="color_title_intro">#37C186</color>
+    <color name="color_body_intro">#607D8B</color>
+    <color name="color_item_language_unselected">#37C186</color>
+    <color name="color_item_language_selected">#FFFFFF</color>
+    <color name="color_sw_on">#FFFFFF</color>
+    <color name="color_sw_off">#CFD8DC</color>
 
 </resources>

@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgTranslate"
         app:layout_constraintBottom_toBottomOf="@+id/imgTranslate"
         app:layout_constraintEnd_toStartOf="@+id/imgTranslate"
-        android:src="@drawable/ic_info"
+        android:src="@drawable/ic_think"
        />
 
     <ImageView

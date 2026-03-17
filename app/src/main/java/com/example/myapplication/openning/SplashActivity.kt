@@ -1,25 +1,28 @@
 package com.example.myapplication.openning
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.dino.ads.admob.AdmobUtils
 import com.dino.ads.admob.RemoteUtils
+import com.dino.ads.iap.IapConfig
+import com.dino.ads.iap.IapListener
+import com.dino.ads.iap.IapUtils
+import com.dino.ads.remote.NativeMultiHolder
+import com.dino.rate.addActivity
 import com.dino.rate.invisible
 import com.example.myapplication.R
 import com.example.myapplication.RemoteConfig
 import com.example.myapplication.ads.AdsManager
+import com.example.myapplication.ads.Common
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivitySplashBinding
+import com.example.myapplication.ui.home.HomeActivity
+import com.example.myapplication.ui.uninstall.ConfirmUninstallActivity
 
-class SplashActivity : BaseActivity<ActivitySplashBinding>( inflater =
-    ActivitySplashBinding::inflate) {
-
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
     private val handler = Handler(Looper.getMainLooper())
     var splash: String? = null
 
@@ -31,10 +34,11 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>( inflater =
             finish()
             return
         }
-//        splash = intent.data?.getQueryParameter("splash") ?: intent.getStringExtra("splash")
-//        Common.onAppOpen(this)
+        splash = intent.data?.getQueryParameter("splash") ?: intent.getStringExtra("splash")
+        Common.onAppOpen(this)
 
         initData()
+
     }
 
     private fun initData() {
@@ -71,11 +75,20 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>( inflater =
     }
 
     private fun nextActivity() {
-        if (!isFinishing && !isDestroyed) {
-            startActivity(Intent(this, LanguagesActivity::class.java).apply {
-                putExtra("fromSplash", true)
-            })
-            finish()
+        if (!isFinishing) {
+            if (intent.action != Intent.ACTION_VIEW) {
+                startActivity(Intent(this, LanguagesActivity::class.java).apply {
+                    putExtra("fromSplash", true)
+                })
+                finish()
+                return
+            }
+            if (splash == "uninstall") {
+                startActivity(Intent(this, ConfirmUninstallActivity::class.java))
+                finish()
+            }
+
         }
     }
+
 }

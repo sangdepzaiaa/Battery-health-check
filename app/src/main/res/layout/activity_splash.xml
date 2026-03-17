@@ -20,7 +20,7 @@
         android:id="@+id/tvLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This action can contain ads"
+        android:text="@string/this_action_can_contain_ads"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/loading"
         app:layout_constraintEnd_toEndOf="parent"

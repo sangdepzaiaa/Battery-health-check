@@ -2,21 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="56dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_vertical"
     android:paddingStart="20dp"
     android:paddingEnd="20dp">
 
-    <RadioButton
+    <androidx.appcompat.widget.AppCompatRadioButton
         android:id="@+id/radio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="#32C48D"/>
+        app:buttonTint="@color/radio_days_color"/>
 
     <TextView
         android:id="@+id/txtDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3 days"
+        android:text="@string/days"
         android:textSize="16sp"
         android:textColor="#666"
         android:layout_marginStart="12dp"/>

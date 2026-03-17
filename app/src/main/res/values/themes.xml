@@ -30,5 +30,22 @@
 
     </style>
 
+    <declare-styleable name="BatteryHealthView">
+
+        <attr name="percentTextSize" format="dimension"/>
+        <attr name="percentTextColor" format="color"/>
+
+        <attr name="labelTextSize" format="dimension"/>
+        <attr name="labelTextColor" format="color"/>
+
+        <attr name="labelText" format="string"/>
+
+        <attr name="labelFont" format="reference"/>
+
+    </declare-styleable>
+
+
+
+
 
 </resources>

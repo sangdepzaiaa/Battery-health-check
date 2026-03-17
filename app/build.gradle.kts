@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.lottie)
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
 
 }
 

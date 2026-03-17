@@ -22,6 +22,109 @@
     <string name="battery_usage">Battery Usage</string>
     <string name="select_Days_Interval">Select Days Interval</string>
     <string name="set_Days_Interval">Set Days Interval</string>
+    <string name="battery_típs">Battery Tips</string>
+    <string name="Keep_it_cool">Keep it cool</string>
+    <string name="text_battery_tip_1">Extreme heat can shorten battery life, regardless of whether you’re charging you phone or using it. Avoid using demanding apps leaving your phone in direct sunlight or hot environment for extended periods. When posible, keep your phone below 33°C (95°F)</string>
+    <string name="charging_habits">Charging habits</string>
+    <string name="text_battery_tip_2">Modern phone prioritize battery health. For convenience, you can charge your phone whenever you need it. However, if you frequently leave your phone plugged in overnight, consider enabling optimized battery charging (or a similar feature) to further optimize battery health in the long run</string>
+    <string name="use_your_phone_while_charging">Use your phone while charging (responsibly)</string>
+    <string name="text_battery_tip_3">Modern phone are designed to be used while charging. However, extreme heat can shorten battery life. Avoid using demanding apps leaving your phone in very hot environment while chargings</string>
+    <string name="conserve_battery_when_low">Conserve battery when low</string>
+    <string name="text_battery_tip_4">When your phone’s battery is low, avoid using demanding apps or games. This can help reduce strain on the battery. Demanding apps require more power to function, and at low voltage, the battery has to work harder to deliver that power</string>
+    <string name="fast_charge_sparingly">Fast charge sparingly</string>
+    <string name="text_battery_tip_5">Fast charging is handy for quick top-ups. While generally safe, consider regular charging when possible for potential benefits</string>
+    <string name="not_fully_detected">Not fully detected</string>
+    <string name="we_haven_t_detected_any_full_charges_yet">We have not detected any full charges yet. Please discharge the battery below 15% to begin measuring full charge levels.</string>
+    <string name="battery_performance">Battery performance</string>
+    <string name="estimated_battery_capacity">Estimated battery capacity</string>
+    <string name="nul">-</string>
+    <string name="designed_battery_capacity">Designed battery capacity</string>
+    <string name="set_battery_capacity_per_design">Set battery capacity per design</string>
+    <string name="sacn">Scan</string>
+    <string name="enter_battery_capacity">Enter battery capacity (mAh)</string>
+    <string name="you_can_find_this_value_based_on_the_type_of_phone_you_are_using">You can find this value based on the type of phone you are using.</string>
+    <string name="ok">ok</string>
+    <string name="battery_health">Battery health</string>
+    <string name="design_capacity">Design capacity</string>
+    <string name="estimated_capacity">Estimated capacity</string>
+    <string name="based_on">Based on 167 charge cycles for 7318% charged 165513.6 mAh total</string>
+    <string name="no_schedule_set">No schedule set</string>
+    <string name="at">At</string>
+    <string name="after">After</string>
+    <string name="days">days</string>
+    <string name="days_at">days at</string>
+    <string name="total">Total: </string>
+    <string name="system_apps">System apps</string>
+    <string name="user_apps">User apps</string>
+    <string name="information">Information</string>
+    <string name="health">Health</string>
+    <string name="voltage">Voltage</string>
+    <string name="charge">Charge</string>
+    <string name="temperature">Temperature</string>
+    <string name="plugged">Plugged</string>
+    <string name="technology">Technology</string>
+    <string name="status">Status</string>
+    <string name="unKnown">unKnown</string>
+    <string name="good">Good</string>
+    <string name="overheat">Overheat</string>
+    <string name="dead">Dead</string>
+    <string name="over_Voltage">Over Voltage</string>
+    <string name="cold">Cold</string>
+    <string name="usb">USB</string>
+    <string name="ac">AC</string>
+    <string name="wireless">Wireless</string>
+    <string name="unplugged">Unplugged</string>
+    <string name="charging">Charging</string>
+    <string name="discharging">Discharging</string>
+    <string name="full">Full</string>
+    <string name="mAh">mAh</string>
+    <string name="nulll">-</string>
+    <string name="invalid_capacity">Invalid capacity</string>
+    <string name="set_battery_capacity_first">Set battery capacity first</string>
+    <string name="less_than_1_min">Less than 1 min</string>
+    <string name="some_time_ago">Some Time ago</string>
+    <string name="just_now">Just now</string>
+    <string name="min_ago">min ago</string>
+    <string name="h_ago">h ago</string>
+    <string name="this_action_can_contain_ads">This action can contain ads</string>
+    <string name="home">Home</string>
+    <string name="battery">Battery</string>
+
+    <string name="intro1">Check Your Battery Health Instantly</string>
+    <string name="intro2">Track What Drains Your Battery</string>
+    <string name="intro3">Automate Battery Check &amp; Optimization</string>
+    <string name="intro1_content">Get real-time insights into battery health, voltage, temperature, and performance in one clean dashboard</string>
+    <string name="intro2_content">Identify apps consuming power and monitor usage patterns to optimize your device performance</string>
+    <string name="intro3_content">Schedule automatic scans and get notified about battery status to keep your device running smoothly</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="product_id" translatable="false">premium_plan</string>
+    <string name="solar_id" translatable="false">xxxxxx</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- -

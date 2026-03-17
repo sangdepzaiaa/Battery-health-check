@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_round_16"
+    android:layout_marginBottom="8dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_info"
+        android:layout_margin="12dp"
+        android:id="@+id/imgBatteryTip"/>
+
+    <TextView
+        android:id="@+id/txvBatteryTip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/imgBatteryTip"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBatteryTip"
+        app:layout_constraintStart_toEndOf="@+id/imgBatteryTip"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/set_Days_Interval"
+        android:fontFamily="@font/font_inter_semi_bold"
+        android:textSize="16sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@color/color_37474F"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:id="@+id/txvDes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txvBatteryTip"
+        app:layout_constraintStart_toStartOf="@+id/txvBatteryTip"
+        app:layout_constraintEnd_toEndOf="@+id/txvBatteryTip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/text_battery_tip_1"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/font_inter_regular"
+        android:textSize="12sp"
+        android:textColor="@color/color_37474F"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

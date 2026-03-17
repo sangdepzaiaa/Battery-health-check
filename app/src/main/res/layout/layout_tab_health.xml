@@ -1,18 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_tab_health"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/vHealth"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_round_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_battery_not_detaech"
+        app:layout_constraintStart_toStartOf="@+id/vHealth"
+        app:layout_constraintTop_toTopOf="@+id/vHealth" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/txvTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_medium"
+        android:text="@string/not_fully_detected"
+        android:textColor="@color/color_FBC02D"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgHealth"
+        app:layout_constraintEnd_toEndOf="@+id/vHealth"
+        app:layout_constraintStart_toEndOf="@+id/imgHealth"
+        app:layout_constraintTop_toTopOf="@+id/imgHealth" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:maxLines="3"
+        android:text="@string/we_haven_t_detected_any_full_charges_yet"
+        android:textColor="@color/color_37474F"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vHealth"
+        app:layout_constraintEnd_toEndOf="@+id/vHealth"
+        app:layout_constraintStart_toStartOf="@+id/vHealth"
+        app:layout_constraintTop_toBottomOf="@+id/imgHealth" />
+
+    <View
+        android:id="@+id/vInfoHealth"
+        android:layout_width="match_parent"
+        android:layout_height="147dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_round_16"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="heath"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vHealth" />
+
+    <TextView
+        android:id="@+id/txvBetteryPermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:text="@string/battery_performance"
+        android:textColor="@color/color_37474F"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toTopOf="@+id/vInfoHealth" />
+
+    <TextView
+        android:id="@+id/txvInfoBetteryPermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:text="@string/nul"
+        android:textColor="@color/color_607D8B"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toTopOf="@+id/vInfoHealth" />
+
+    <TextView
+        android:id="@+id/txvEstimateBattery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:text="@string/estimated_battery_capacity"
+        android:textColor="@color/color_37474F"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toBottomOf="@+id/txvBetteryPermission" />
+
+    <TextView
+        android:id="@+id/txvInfoEstimateBattery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:text="@string/nul"
+        android:textColor="@color/color_607D8B"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toBottomOf="@+id/txvInfoBetteryPermission" />
+
+    <TextView
+        android:id="@+id/txvDesignBattery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:text="@string/designed_battery_capacity"
+        android:textColor="@color/color_37474F"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toBottomOf="@+id/txvEstimateBattery" />
+
+    <TextView
+
+        android:id="@+id/txvInfoDesignBattery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_regular"
+        android:text="@string/nul"
+        android:textColor="@color/color_607D8B"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toBottomOf="@+id/txvInfoEstimateBattery" />
+
+    <TextView
+        android:id="@+id/txvSetDesign"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_inter_semi_bold"
+        android:text="@string/set_battery_capacity_per_design"
+        android:textColor="@color/color_37C186"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vInfoHealth"
+        app:layout_constraintEnd_toEndOf="@+id/vInfoHealth"
+        app:layout_constraintTop_toBottomOf="@id/txvInfoDesignBattery" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOk"
+        android:layout_width="200dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_round_8"
+        android:text="@string/sacn"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvSetDesign" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
