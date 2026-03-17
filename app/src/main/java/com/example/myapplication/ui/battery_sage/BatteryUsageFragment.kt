@@ -41,6 +41,8 @@ class BatteryUsageFragment : BaseFragment<FragmentBatteryUsageBinding>(
             startActivity(Intent(requireContext(), BatteryTipsActivity::class.java))
         }
 
+
+
         setupRecyclerView()
         setupTabLayout()
         loadData()

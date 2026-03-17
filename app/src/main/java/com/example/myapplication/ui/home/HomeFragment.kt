@@ -25,10 +25,12 @@ import com.example.myapplication.utils.BatteryInfoUtil
 import com.example.myapplication.data.BatteryItem
 import com.example.myapplication.data.TYPE_BIG
 import com.example.myapplication.data.TYPE_SMALL
+import com.example.myapplication.ui.battery_sage.BatteryTipsActivity
 import com.example.myapplication.utils.BatteryHealthManager
 import com.example.myapplication.utils.CalcBatteryAdvanced
 import com.example.myapplication.utils.CalcBatteryBasic
 import com.example.myapplication.utils.CalcBatteryBasic.calcHealth
+import com.example.myapplication.utils.tap
 import com.google.android.material.tabs.TabLayout
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(
@@ -54,7 +56,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         setupClick()
         loadBatteryInfo()
 
-
+        binding.layoutToolBar.imgInfo.tap {
+            startActivity(Intent(requireContext(), BatteryTipsActivity::class.java))
+        }
 
     }
 
@@ -213,9 +217,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         }
 
 
-        if (health2 != null) {
+        if (health != null) {
             binding.layoutTabHealth.txvInfoBetteryPermission.text =
-                "$health2 ${context?.getString(R.string.mAh)}"
+                "$health ${context?.getString(R.string.mAh)}"
         } else {
             binding.layoutTabHealth.txvInfoBetteryPermission.text =
                 "${context?.getString(R.string.nulll)}"

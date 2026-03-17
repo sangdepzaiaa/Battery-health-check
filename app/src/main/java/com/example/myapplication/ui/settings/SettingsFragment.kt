@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.settings
 
+import android.content.Intent
 import java.util.concurrent.TimeUnit
 import android.icu.util.Calendar
 import android.widget.Toast
@@ -9,6 +10,7 @@ import androidx.work.WorkManager
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.databinding.FragmentSettingsBinding
+import com.example.myapplication.ui.battery_sage.BatteryTipsActivity
 import com.example.myapplication.ui.dialog.DaysIntervalDialog
 import com.example.myapplication.ui.dialog.TimePickerDialog
 import com.example.myapplication.utils.BatteryCheckWorker
@@ -29,7 +31,13 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
 
         binding.run {
 
-            layoutToolBar.txvTitle.text = getString(R.string.settings)
+            layoutToolBar.run{
+                imgInfo.tap {
+                    startActivity(Intent(requireContext(), BatteryTipsActivity::class.java))
+                }
+
+                txvTitle.text = getString(R.string.settings)
+            }
 
             layoutProgrammerSettings.run {
 
